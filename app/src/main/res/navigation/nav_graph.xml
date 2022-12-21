@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/studyInfoListFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.kubrayildirim.studyapp.ui.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_studyFragment"
+            app:destination="@id/studyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studyInfoListFragment"
+        android:name="com.kubrayildirim.studyapp.ui.infolist.StudyInfoListFragment"
+        android:label="fragment_study_info_list"
+        tools:layout="@layout/fragment_study_info_list" >
+        <action
+            android:id="@+id/action_studyInfoListFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studyFragment"
+        android:name="com.kubrayildirim.studyapp.ui.study.StudyFragment"
+        android:label="fragment_study"
+        tools:layout="@layout/fragment_study" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_studyFragment_to_studyInfoListFragment"
+            app:destination="@id/studyInfoListFragment" />
+    </fragment>
+</navigation>
